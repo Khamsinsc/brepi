@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './Header';
-import Paginator from './Paginator';
+import PaginatorContainer from '../containers/PaginatorContainer';
 
 const Beers = () => {
   return (
     <div className="beersContainer">
-      <Paginator />
+      <PaginatorContainer />
     </div>
   )
 }

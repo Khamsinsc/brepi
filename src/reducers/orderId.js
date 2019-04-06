@@ -9,8 +9,10 @@ const orderId = (state = initState, action = '') => {
     return {
       ...state,
       orderContent: currentState
-    }
-  } else { return state }
+    };
+  } else {
+    return state;
+  }
 };
 
 export default orderId;

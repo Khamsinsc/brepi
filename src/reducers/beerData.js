@@ -3,12 +3,8 @@ const initState = {
 };
 
 const getBeer = (state = initState, action = '') => {
-  if (action.type === 'BEER_DATA') {
-    return {
-      ...state,
-      beers: action.beers
-    }
-  } else { return state };
+  return action.type === 'BEER_DATA' ?
+    { ...state, beers: action.beers } : state;
 };
 
 export default getBeer;

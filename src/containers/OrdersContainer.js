@@ -13,8 +13,8 @@ const mapDispatchToProps = (dispatch) => {
     onMount: (page) => {
       dispatch(menupage(page));
     }
-  }
-}
+  };
+};
 
 const OrdersContainer = connect(
   mapStateToProps,

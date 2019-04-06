@@ -3,9 +3,8 @@ const initState = {
 };
 
 const menuReducer = (state = initState, action = '') => {
-  if (action.type === 'MENU_PAGE') {
-    return { selectedKeys: action.selectedKeys }
-  } else { return state };
+  return (action.type === 'MENU_PAGE') ?
+    { selectedKeys: action.selectedKeys } : state
 };
 
 export default menuReducer;

@@ -4,10 +4,10 @@ import BeerContainer from '../containers/BeerContainer';
 
 const Beers = () => {
   return (
-    <div className="beersContainer">
+    <React.Fragment>
       <BeerContainer />
       <PaginatorContainer />
-    </div>
+    </React.Fragment>
   )
 }
 

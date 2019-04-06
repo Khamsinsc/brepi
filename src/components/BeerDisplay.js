@@ -10,7 +10,6 @@ const BeerDisplay = ({ beers, onClick, onMount }) => {
 
   let beerCards = beers.beers.map(beer => {
     const { id, image_url, name, description } = beer !== undefined && beer;
-
     const coverJSX =
       <Tooltip title={ description }>
         <div className='beerimg'>
@@ -48,7 +47,3 @@ const BeerDisplay = ({ beers, onClick, onMount }) => {
 }
 
 export default BeerDisplay;
-
-
-
-

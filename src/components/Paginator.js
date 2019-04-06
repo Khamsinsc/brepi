@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Pagination } from 'antd';
 
 const Paginator = (props) => {
@@ -6,7 +6,6 @@ const Paginator = (props) => {
   return (
     <div className='paginator'>
       <Pagination
-        /* current={ props.pageNumber.count } */
         onChange={ (e) => props.onClick(e) }
         total={ 90 }
       />
@@ -15,4 +14,3 @@ const Paginator = (props) => {
 }
 
 export default Paginator;
-

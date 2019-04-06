@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 
 const Header = ({ selected, onSelect }) => {
-  console.log(selected, onSelect);
-
   return (
     <Menu
       selectedKeys={ selected }

@@ -3,7 +3,6 @@ const initState = {
 };
 
 const getBeer = (state = initState, action = '') => {
-
   if (action.type === 'BEER_DATA') {
     return {
       ...state,

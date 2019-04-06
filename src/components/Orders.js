@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, Tooltip, Empty } from 'antd';
 
 const gridStyle = {
@@ -6,14 +6,17 @@ const gridStyle = {
   textAlign: 'center',
 };
 
+const Orders = ({ orders, onMount }) => {
 
-const Orders = ({ orders }) => {
+  useEffect(() => onMount(['orders']), []);
 
   let orderJSX = orders.length > 0 ? orders.map(order => {
     const { id, name, tagline } = order;
-    return (<Tooltip title={ tagline } key={ id }>
-      <Card.Grid style={ gridStyle }>{ name }</Card.Grid>
-    </Tooltip>)
+    return (
+      <Tooltip title={ tagline } key={ id }>
+        <Card.Grid style={ gridStyle }>{ name }</Card.Grid>
+      </Tooltip>
+    )
   }) : <Empty />;
 
   return (
@@ -23,7 +26,6 @@ const Orders = ({ orders }) => {
       </Card>
     </div>
   )
-
 }
 
 export default Orders;

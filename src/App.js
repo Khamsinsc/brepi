@@ -1,13 +1,12 @@
 import React from 'react';
-import Button from 'antd/lib/button';
 import './App.css';
-import Header from './components/Header';
+import HeaderContainer from './containers/HeaderContainer';
 
 const App = (props) => {
   return (
     <div>
-      <Header />
-      {props.children}
+      <HeaderContainer />
+      { props.children }
     </div>
   )
 }

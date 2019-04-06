@@ -2,14 +2,21 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 
-const Header = () => {
+const Header = ({ selected, onSelect }) => {
+  console.log(selected, onSelect);
+
   return (
-    <Menu mode="horizontal">
+    <Menu
+      selectedKeys={ selected }
+      onSelect={ (e) => {
+        onSelect(e.selectedKeys)
+      } }
+      mode="horizontal">
       <Menu.Item key="home">
-        <NavLink to="/"></NavLink><Icon type="home" />Home
+        <NavLink to="/"><Icon type="home" />Home</NavLink>
       </Menu.Item>
       <Menu.Item key="beers">
-        <NavLink to="/beers"></NavLink><Icon type="heart" />Beers
+        <NavLink to="/beers"><Icon type="heart" />Beers</NavLink>
       </Menu.Item>
       <Menu.Item key="orders">
         <NavLink to="/orders"><Icon type="pay-circle" />Orders</NavLink>

@@ -5,16 +5,16 @@ import Paginator from '../components/Paginator';
 const mapStateToProps = ({ pageNumber }) => {
   return {
     pageNumber: pageNumber
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onClick: (event) => {
       dispatch(getBeers(event));
     }
-  }
-}
+  };
+};
 
 const PaginatorContainer = connect(
   mapStateToProps,

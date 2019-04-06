@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
-import pageNumber from './pageNumber';
 import orderId from './orderId';
 import getBeer from './beerData';
+import menuReducer from './menuReducer';
 
 const rootReducer = combineReducers({
   orderId,
-  getBeer
+  getBeer,
+  menuReducer
 });
 
 export default rootReducer;

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import BeerDisplay from '../components/BeerDisplay';
+import { axiosOrders } from '../actions/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -7,8 +8,17 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onClick: (id) => {
+      dispatch(axiosOrders(id))
+    }
+  }
+}
+
 const BeerContainer = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(BeerDisplay);
 
 export default BeerContainer;

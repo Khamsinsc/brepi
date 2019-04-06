@@ -1,29 +1,45 @@
-import React, { useEffect } from 'react';
-import { Card, Icon, Avatar } from 'antd';
+import React from 'react';
+import { Card, Button, Tooltip } from 'antd';
+
 const { Meta } = Card;
 
-const BeerDisplay = ({ beers }) => {
-  console.log(beers, 'display');
+const BeerDisplay = ({ beers, onClick }) => {
 
-  const { image_url, name, discription } = beers.beers[0] !== undefined && beers.beers[0];
+  let beerCards = beers.beers.map(beer => {
+    let { id, image_url, name, description } = beer !== undefined && beer;
+    return (
+      <Card
+        key={ id }
+        style={ { height: '350px', width: '300px', margin: '10px' } }
+        cover={
+          <Tooltip title={ description }>
+            <div className='beerimg'>
+              <img alt="example" src={ image_url } />
+            </div>
+          </Tooltip>
+        }
 
+        actions={ [<Tooltip title="Order"><Button value={ id } icon="shopping" onClick={ (e) => {
+          e.persist();
+          onClick(e.target.value);
+        } }>
+          Order Beer
+      </Button></Tooltip>] }
+      >
+        <Meta title={ name } />
+      </Card>
+    )
+  })
 
   return (
-    <Card
-      style={ {
-        width: 300,
-      } }
-      cover={ <img alt="example" src={ image_url } /> }
-      actions={ [<Icon type="shopping" />] }
-    >
-      <Meta
-
-        title={ name }
-        description={ discription }
-      />
-    </Card>
+    <div className='beerContainer'>
+      { beerCards }
+    </div>
   )
 }
 
 export default BeerDisplay;
+
+
+
 

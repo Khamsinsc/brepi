@@ -4,7 +4,6 @@ import orderId from './orderId';
 import getBeer from './beerData';
 
 const rootReducer = combineReducers({
-  pageNumber,
   orderId,
   getBeer
 });

@@ -3,10 +3,10 @@ const initState = {
 };
 
 const getBeer = (state = initState, action = '') => {
-  console.log(action);
 
   if (action.type === 'BEER_DATA') {
     return {
+      ...state,
       beers: action.beers
     }
   } else { return state };

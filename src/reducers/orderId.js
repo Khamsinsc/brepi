@@ -1,13 +1,16 @@
 const initState = {
-  ids: []
+  orderContent: []
 };
 
 const orderId = (state = initState, action = '') => {
   if (action.type === 'ORDER_ID') {
+    let currentState = state.orderContent;
+    currentState.push(action.orderContent);
     return {
-      ids: state.ids.push(action.orderId)
+      ...state,
+      orderContent: currentState
     }
-  } else { return state };
+  } else { return state }
 };
 
 export default orderId;

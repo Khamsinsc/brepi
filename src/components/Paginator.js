@@ -4,11 +4,13 @@ import { Pagination } from 'antd';
 const Paginator = (props) => {
   props.onClick(1);
   return (
-    <Pagination
-      /* current={ props.pageNumber.count } */
-      onChange={ (e) => props.onClick(e) }
-      total={ 90 }
-    />
+    <div className='paginator'>
+      <Pagination
+        /* current={ props.pageNumber.count } */
+        onChange={ (e) => props.onClick(e) }
+        total={ 90 }
+      />
+    </div>
   )
 }
 

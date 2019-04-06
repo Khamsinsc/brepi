@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import BeerDisplay from '../components/BeerDisplay';
 
-const mapStateToProps = ({ pageNumber }) => {
+const mapStateToProps = (state) => {
   return {
-    state: pageNumber
+    beers: state.getBeer
   }
 }
 

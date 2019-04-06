@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Pagination } from 'antd';
 
-const Paginator = ({ onClick, state }) => {
+const Paginator = (props) => {
+  props.onClick(1);
   return (
     <Pagination
-      current={ state.count }
-      onChange={ (e) => onClick(e) }
-      total={ 50 }
+      /* current={ props.pageNumber.count } */
+      onChange={ (e) => props.onClick(e) }
+      total={ 90 }
     />
   )
 }

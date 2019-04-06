@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import { gotoPage } from '../actions/actions';
+import { getBeers } from '../actions/actions';
 import Paginator from '../components/Paginator';
 
 const mapStateToProps = ({ pageNumber }) => {
   return {
-    state: pageNumber
+    pageNumber: pageNumber
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onClick: (event) => {
-      dispatch(gotoPage(event));
+      dispatch(getBeers(event));
     }
   }
 }

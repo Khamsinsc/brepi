@@ -1,17 +1,25 @@
-import React from 'react';
-import { Card } from 'antd';
+import React, { useEffect } from 'react';
+import { Card, Icon, Avatar } from 'antd';
 const { Meta } = Card;
-const BeerDisplay = ({ state }) => {
-  console.log(state);
+
+const BeerDisplay = ({ beers }) => {
+  console.log(beers, 'display');
+
+  const { image_url, name, discription } = beers.beers[0] !== undefined && beers.beers[0];
+
+
   return (
     <Card
-      hoverable
-      style={ { width: 240 } }
-      cover={ <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" /> }
+      style={ {
+        width: 300,
+      } }
+      cover={ <img alt="example" src={ image_url } /> }
+      actions={ [<Icon type="shopping" />] }
     >
       <Meta
-        title="Europe Street beat"
-        description="www.instagram.com"
+
+        title={ name }
+        description={ discription }
       />
     </Card>
   )
